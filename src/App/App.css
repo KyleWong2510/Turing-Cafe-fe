@@ -9,6 +9,7 @@
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  justify-content: space-between;
   text-align: center;
 }
 
@@ -16,4 +17,5 @@
   color: teal;
   font-family: 'Pacifico', cursive;
   font-size: 50px;
+  height: 15vh
 }
