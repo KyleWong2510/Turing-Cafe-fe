@@ -1,9 +1,9 @@
 .reservations-container {
   display: grid;
-  column-gap: 5%;
+  column-gap: 2%;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   height: 75vh;
   overflow: scroll;
-  row-gap: 5%;
+  row-gap: 15%;
 
 }

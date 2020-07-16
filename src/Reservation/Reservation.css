@@ -3,7 +3,9 @@
   border: solid 5px teal;
   border-radius: 10px;
   color: teal;
-  padding: 5%
+  height: 100%;
+  padding: 5%;
+  width: 80%
 }
 
 .cancel-btn {
