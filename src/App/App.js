@@ -15,6 +15,11 @@ class App extends Component {
     this.getReservations()
   }
 
+  componenetDidUpdate = (prevProps, prevState) => {
+    this.state.allReservations !== prevState.allReservations &&
+      this.getReservations()
+  }
+
   getReservations = () => {
     fetch('http://localhost:3001/api/v1/reservations')
       .then(res => res.json())
@@ -39,6 +44,7 @@ class App extends Component {
       method: 'DELETE'
     })
       .then(res => console.log(res))
+      .then(this.removeReservation(id))
       .catch(err => console.error(err))
   }
 
@@ -47,14 +53,13 @@ class App extends Component {
   }
 
   removeReservation = (id) => {
-    let allRes = this.state.allReservations
+    let allRes = [...this.state.allReservations]
     let reservation = allRes.find(res => {
       return res.id === id
     })
     let index = allRes.indexOf(reservation)
-    let modified = allRes.splice(index, 1)
-    console.log(modified)
-
+    allRes.splice(index, 1)
+    this.setState({ allReservations: allRes})
   }
 
   render() {
@@ -62,13 +67,12 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <Form 
-          postReservation={this.p}
+          postReservation={this.postReservation}
           addReservation={this.addReservation}
         />
         <ReservationsContainer 
           allReservations={this.state.allReservations}
           deleteReservation={this.deleteReservation}
-          removeReservation={this.removeReservation}
         />
       </div>
     )
