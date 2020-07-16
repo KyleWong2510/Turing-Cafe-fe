@@ -25,6 +25,16 @@ class Form extends React.Component{
     }
     this.props.postReservation(reservation)
     this.props.addReservation(reservation)
+    this.clearForm()
+  }
+
+  clearForm = () => {
+    this.setState({
+      name: '',
+      date: '',
+      time: '',
+      number: ''
+    })
   }
 
   render() {
