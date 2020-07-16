@@ -27,7 +27,7 @@ it('Should display the reservation on the screen once submitted', () => {
   fireEvent.change(number, {target: { value: 5 }})
   fireEvent.click(btn)
 
-  const newName = getByText('Guest: Jimbo')
+  const newName = getByText('Jimbo')
   const newDate = getByText('8/4', { exact: false })
   const newTime = getByText('6:00', { exact: false })
   const newNumber = getByText('Number of Guests: 5')

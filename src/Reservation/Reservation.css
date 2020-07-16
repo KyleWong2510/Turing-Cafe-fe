@@ -1,4 +1,3 @@
-
 .res-card {
   background-color: white;
   border: solid 5px teal;
@@ -7,3 +6,12 @@
   padding: 5%
 }
 
+.cancel-btn {
+  background-color: teal;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: 800;
+  padding: 3%;
+  width: 70%
+}
