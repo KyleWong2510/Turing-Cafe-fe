@@ -34,8 +34,27 @@ class App extends Component {
       .catch(err => console.error(err))
   }
 
+  deleteReservation = (id) => {
+    fetch(`http://localhost:3001/api/v1/reservations/${id}`, {
+      method: 'DELETE'
+    })
+      .then(res => console.log(res))
+      .catch(err => console.error(err))
+  }
+
   addReservation = res => {
     this.setState({ allReservations: [...this.state.allReservations, res]})
+  }
+
+  removeReservation = (id) => {
+    let allRes = this.state.allReservations
+    let reservation = allRes.find(res => {
+      return res.id === id
+    })
+    let index = allRes.indexOf(reservation)
+    let modified = allRes.splice(index, 1)
+    console.log(modified)
+
   }
 
   render() {
@@ -48,6 +67,8 @@ class App extends Component {
         />
         <ReservationsContainer 
           allReservations={this.state.allReservations}
+          deleteReservation={this.deleteReservation}
+          removeReservation={this.removeReservation}
         />
       </div>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import Reservation from '../Reservation/Reservation'
 import './ReservationsContainer.css'
 
-function ReservationsContainer({ allReservations }) {
+function ReservationsContainer({ allReservations, deleteReservation }) {
   const reservations = allReservations.map(res => {
     return (
       <Reservation 
@@ -11,6 +11,7 @@ function ReservationsContainer({ allReservations }) {
         date={res.date}
         time={res.time}
         number={res.number}
+        deleteReservation={deleteReservation}
       />
     )
   })
