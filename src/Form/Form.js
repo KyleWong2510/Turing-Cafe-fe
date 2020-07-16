@@ -29,7 +29,7 @@ class Form extends React.Component{
 
   render() {
     return (
-      <section className='reservation form'>
+      <section className='reservation-form'>
       <h1 className='form-header'>Make a Reservation</h1>
       <form className='form' onSubmit={this.handleSubmit}>
         <input 
@@ -54,6 +54,7 @@ class Form extends React.Component{
           onChange={e => this.handleChange(e)}
         />
         <input 
+          className='submit-btn'
           type='number'
           name='number'
           placeholder={1}
