@@ -43,7 +43,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <Form 
-          postReservation={this.postReservation}
+          postReservation={this.p}
           addReservation={this.addReservation}
         />
         <ReservationsContainer 
